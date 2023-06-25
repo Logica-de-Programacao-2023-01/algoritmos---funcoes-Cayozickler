@@ -1,0 +1,15 @@
+import "errors"
+
+func buscarNumero(numero int, slice []int) (bool, error) {
+    if len(slice) == 0 {
+        return false, errors.New("O slice está vazio")
+    }
+
+    for _, valor := range slice {
+        if valor == numero {
+            return true, nil
+        }
+    }
+
+    return false, nil
+}
