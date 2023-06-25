@@ -1,0 +1,19 @@
+import (
+	"errors"
+	"strings"
+)
+
+func substituirVogais(str string) (string, error) {
+	if str == "" {
+		return "", errors.New("A string está vazia")
+	}
+
+	vogais := []string{"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
+
+	for _, vogal := range vogais {
+		str = strings.ReplaceAll(str, vogal, "*")
+	}
+
+	return str, nil
+}
+
