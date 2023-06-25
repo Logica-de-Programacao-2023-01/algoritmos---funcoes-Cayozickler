@@ -1,0 +1,16 @@
+import "errors"
+
+func filtrarNumerosPares(slice []int) ([]int, error) {
+    if len(slice) == 0 {
+        return nil, errors.New("O slice está vazio")
+    }
+
+    numerosPares := []int{}
+    for _, valor := range slice {
+        if valor%2 == 0 {
+            numerosPares = append(numerosPares, valor)
+        }
+    }
+
+    return numerosPares, nil
+}
