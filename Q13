@@ -1,0 +1,20 @@
+import (
+    "errors"
+    "strconv"
+)
+
+func somaDigitos(numero int) (int, error) {
+    if numero < 0 {
+        return 0, errors.New("O número é negativo")
+    }
+
+    numeroStr := strconv.Itoa(numero)
+    soma := 0
+
+    for _, digito := range numeroStr {
+        digitoInt, _ := strconv.Atoi(string(digito))
+        soma += digitoInt
+    }
+
+    return soma, nil
+}
