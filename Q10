@@ -1,0 +1,18 @@
+import (
+    "errors"
+    "sort"
+)
+
+func ordenarSlice(slice []int) ([]int, error) {
+    if len(slice) == 0 {
+        return nil, errors.New("O slice está vazio")
+    }
+
+    // Cria uma cópia do slice original para evitar a modificação do slice original
+    copia := make([]int, len(slice))
+    copy(copia, slice)
+
+    sort.Ints(copia)
+
+    return copia, nil
+}
