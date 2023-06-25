@@ -1,0 +1,21 @@
+import (
+    "errors"
+    "strings"
+    "unicode"
+)
+
+func filtrarStringsMaiusculas(slice []string) (string, error) {
+    if len(slice) == 0 {
+        return "", errors.New("O slice está vazio")
+    }
+
+    var resultado strings.Builder
+    for _, str := range slice {
+        if len(str) > 0 && unicode.IsUpper(rune(str[0])) {
+            resultado.WriteString(str)
+            resultado.WriteString(" ")
+        }
+    }
+
+    return strings.TrimSpace(resultado.String()), nil
+}
