@@ -1,0 +1,17 @@
+import (
+	"errors"
+	"sort"
+	"strings"
+)
+
+func ordenarStrings(slice []string) (string, error) {
+	if len(slice) == 0 {
+		return "", errors.New("O slice está vazio")
+	}
+
+	sort.Strings(slice)
+	resultado := strings.Join(slice, "")
+
+	return resultado, nil
+}
+
