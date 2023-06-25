@@ -1,0 +1,12 @@
+func contarVogais(str string) int {
+    count := 0
+    vogais := "aeiouAEIOU" // Vogais maiúsculas e minúsculas
+
+    for _, char := range str {
+        if strings.ContainsRune(vogais, char) {
+            count++
+        }
+    }
+
+    return count
+}
