@@ -1,0 +1,22 @@
+import "errors"
+
+func intersecao(slice1 []int, slice2 []int) ([]int, error) {
+    if len(slice1) == 0 || len(slice2) == 0 {
+        return nil, errors.New("Um dos slices está vazio")
+    }
+
+    elementos := make([]int, 0)
+
+    mapa := make(map[int]bool)
+    for _, num := range slice1 {
+        mapa[num] = true
+    }
+
+    for _, num := range slice2 {
+        if mapa[num] {
+            elementos = append(elementos, num)
+        }
+    }
+
+    return elementos, nil
+}
